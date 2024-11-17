@@ -1,5 +1,5 @@
-import React from 'react';
-import StarRating from './StarRating'; 
+import React from 'react'
+import StarRating from './StarRating'
 
 const Testeimonial = ({ item }) => {
   return (
@@ -13,7 +13,7 @@ const Testeimonial = ({ item }) => {
       <h3 className="name">{item.author}</h3>
       <p className="signature">{item.jobRole}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Testeimonial;
+export default Testeimonial
