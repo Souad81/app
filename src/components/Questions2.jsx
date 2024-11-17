@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react';
-import Arrow1 from "../assets/images/arrow-1.svg";
-import Arrow2 from "../assets/images/arrow-2.svg";
+import React, { useState, useEffect } from 'react'
+import Arrow1 from "../assets/images/arrow-1.svg"
+import Arrow2 from "../assets/images/arrow-2.svg"
 
 const Questions2 = () => {
-  const [openQuestion, setOpenQuestion] = useState(null); // Track which question is open
-  const [faqs, setFaqs] = useState([]); // State to store FAQ data
+  const [openQuestion, setOpenQuestion] = useState(null)
+  const [faqs, setFaqs] = useState([])
 
-  // Fetch FAQ data from the API
+  
   useEffect(() => {
     const fetchFaqs = async () => {
       try {
-        const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq');
+        const response = await fetch('https://win24-assignment.azurewebsites.net/api/faq')
         if (response.ok) {
-          const data = await response.json();
-          setFaqs(data); // Store fetched FAQs in state
+          const data = await response.json()
+          setFaqs(data)
         } else {
-          console.error('Failed to fetch FAQs');
+          console.error('Failed to fetch FAQs')
         }
       } catch (error) {
-        console.error('Error:', error);
+        console.error('Error:', error)
       }
-    };
+    }
 
-    fetchFaqs();
+    fetchFaqs()
   }, []);
 
-  // Toggle question visibility
+ 
   const toggleQuestion = (questionId) => {
-    setOpenQuestion(openQuestion === questionId ? null : questionId);
-  };
+    setOpenQuestion(openQuestion === questionId ? null : questionId)
+  }
 
   return (
     <section id="questions-2">
@@ -48,7 +48,6 @@ const Questions2 = () => {
         ))}
       </div>
     </section>
-  );
-};
-
-export default Questions2;
+  )
+}
+export default Questions2
